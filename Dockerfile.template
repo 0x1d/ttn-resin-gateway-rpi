@@ -26,6 +26,9 @@ COPY --from=buildstep /usr/lib/libttn* /usr/lib/
 
 COPY run.py ./
 COPY start.sh ./
+COPY reset_lgw.sh ./
+
+RUN chmod +x reset_lgw.sh
 
 # run when container lands on device
 CMD ["bash", "start.sh"]

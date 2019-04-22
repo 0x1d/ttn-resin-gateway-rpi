@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "reset LGW"
-/opt/ttn-gateway/reset_lgw.sh stop 22
-/opt/ttn-gateway/reset_lgw.sh start 22
+echo "Reset LGW on PIN ${GW_RESET_PIN}"
+/opt/ttn-gateway/reset_lgw.sh stop ${GW_RESET_PIN}
+/opt/ttn-gateway/reset_lgw.sh start ${GW_RESET_PIN}
 
 # Start the node exporter
 mkdir /mnt/ramdisk && mount -t tmpfs -o size=8m tmpfs /mnt/ramdisk
